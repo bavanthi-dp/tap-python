@@ -16,20 +16,3 @@ def calculate_order_totals(data):
 
     return order_totals
 
-import re
-
-def to_snake_case(name: str) -> str:
-    """Convert to snake_case."""
-    return re.sub(r"[^a-z0-9]+", "_", name.lower()).strip("_")
-
-
-def calculate_order_totals(data: list[dict]) -> dict:
-    """Calculate order totals."""
-    totals = {}
-
-    for row in data:
-        id = row["order_id"]
-        totals.setdefault(id, 0)
-        totals[id] += float(row["price"])
-
-    return totals
