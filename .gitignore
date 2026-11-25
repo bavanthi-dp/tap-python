@@ -1,0 +1,7 @@
+logs/
+output/
+processed_manifest.json
+bad_records.csv
+validation_summary.csv
+__pycache__/
+.ipynb_checkpoints/

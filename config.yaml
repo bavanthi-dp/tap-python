@@ -1,0 +1,31 @@
+
+paths:
+  input: "data/orders_semicolon.csv"
+  output_dir: "output"
+  log_dir: "logs"
+  manifest: "processed_manifest.json"
+
+csv:
+  delimiter: ";"
+  encoding: "utf-8-sig"
+
+validation:
+  required_columns:
+    - order_id
+    - customer_id
+    - order_status
+    - order_purchase_timestamp
+
+  max_missing_percentage: 50
+
+mappings:
+  order_status:
+    delivered: "DELIVERED"
+    shipped: "SHIPPED"
+    canceled: "CANCELED"
+    unavailable: "UNAVAILABLE"
+
+output:
+  csv: "clean_orders.csv"
+  json: "clean_orders.json"
+  summary: "run_summary.json"
